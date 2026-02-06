@@ -1,0 +1,188 @@
+<!-- StoryVerse Card Component -->
+<!-- Usage: Copy the style block to your CSS and use the card classes -->
+
+<style>
+/* StoryVerse Card Styles */
+.sv-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image */
+.sv-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sv-card:hover .sv-card-image {
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.sv-card-content {
+    padding: 1.5rem;
+}
+
+.sv-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.sv-card-description {
+    font-family: 'Quicksand', sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Card Footer */
+.sv-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sv-card-price {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+/* Card Badge */
+.sv-card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 0.375rem 0.875rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Horizontal Card */
+.sv-card-horizontal {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.sv-card-horizontal .sv-card-image {
+    height: 100%;
+}
+
+/* Dark Card Variant */
+.sv-card-dark {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+}
+
+.sv-card-dark .sv-card-title {
+    color: white;
+}
+
+.sv-card-dark .sv-card-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Story Card (for book previews) */
+.sv-story-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sv-story-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sv-story-card:hover img {
+    transform: scale(1.1);
+}
+
+.sv-story-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.sv-story-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.sv-story-card-author {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+</style>
+
+<!-- Card Examples -->
+<h3>Card Component Examples</h3>
+
+<!-- Standard Card -->
+<div class="sv-card" style="max-width: 350px;">
+    <div style="position: relative; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Book" class="sv-card-image">
+        <span class="sv-card-badge">New</span>
+    </div>
+    <div class="sv-card-content">
+        <h3 class="sv-card-title">Personalized Adventure Book</h3>
+        <p class="sv-card-description">Create a magical story where your child is the hero. Perfect for ages 3-8.</p>
+        <div class="sv-card-footer">
+            <span class="sv-card-price">$29.99</span>
+            <button class="sv-btn sv-btn-primary sv-btn-small">Preview</button>
+        </div>
+    </div>
+</div>
+
+<!-- Dark Card -->
+<div class="sv-card sv-card-dark" style="max-width: 350px; margin-top: 2rem;">
+    <div class="sv-card-content">
+        <h3 class="sv-card-title">Premium Subscription</h3>
+        <p class="sv-card-description">Get unlimited access to all our story templates and premium features.</p>
+        <div class="sv-card-footer">
+            <span class="sv-card-price">$9.99/mo</span>
+            <button class="sv-btn sv-btn-primary sv-btn-small">Subscribe</button>
+        </div>
+    </div>
+</div>
+
+<!-- Story Card -->
+<div class="sv-story-card" style="max-width: 250px; margin-top: 2rem;">
+    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400" alt="Story">
+    <div class="sv-story-card-overlay">
+        <h4 class="sv-story-card-title">The Magic Forest</h4>
+        <p class="sv-story-card-author">Created for Emma</p>
+    </div>
+</div>
