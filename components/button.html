@@ -1,0 +1,135 @@
+<!-- StoryVerse Button Component -->
+<!-- Usage: Copy the style block to your CSS and use the button classes -->
+
+<style>
+/* StoryVerse Button Styles */
+.sv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary Button - Magic Theme */
+.sv-btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.sv-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* Secondary Button */
+.sv-btn-secondary {
+    background: transparent;
+    color: #6366f1;
+    border: 2px solid #6366f1;
+}
+
+.sv-btn-secondary:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Large Button */
+.sv-btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* Small Button */
+.sv-btn-small {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+}
+
+/* With Icon */
+.sv-btn-icon {
+    gap: 0.5rem;
+}
+
+.sv-btn-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Loading State */
+.sv-btn-loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.sv-btn-loading::after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Shine Effect */
+.sv-btn-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255,255,255,0.3) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+}
+
+.sv-btn-shine:hover::before {
+    left: 100%;
+}
+</style>
+
+<!-- Button Examples -->
+<h3>Button Component Examples</h3>
+
+<!-- Primary Button -->
+<button class="sv-btn sv-btn-primary">Get Started</button>
+
+<!-- Secondary Button -->
+<button class="sv-btn sv-btn-secondary">Learn More</button>
+
+<!-- Large Primary -->
+<button class="sv-btn sv-btn-primary sv-btn-large">Create Your Story</button>
+
+<!-- Button with Icon -->
+<button class="sv-btn sv-btn-primary sv-btn-icon">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+    </svg>
+    Add to Cart
+</button>
+
+<!-- Loading Button -->
+<button class="sv-btn sv-btn-primary sv-btn-loading">Processing</button>
