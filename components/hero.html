@@ -1,0 +1,238 @@
+<!-- StoryVerse Hero Section Component -->
+<!-- Usage: Copy the style block to your CSS and use the hero classes -->
+
+<style>
+/* StoryVerse Hero Styles */
+.sv-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fed7aa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Elements */
+.sv-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.sv-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.sv-hero-content {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sv-hero-text {
+    animation: fadeInUp 0.8s ease;
+}
+
+.sv-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: #6366f1;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.sv-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1e1b4b;
+    margin-bottom: 1.5rem;
+}
+
+.sv-hero-title span {
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sv-hero-description {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.sv-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sv-hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sv-hero-stat {
+    text-align: center;
+}
+
+.sv-hero-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.sv-hero-stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* Hero Image */
+.sv-hero-image {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.sv-hero-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .sv-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .sv-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .sv-hero-buttons {
+        justify-content: center;
+    }
+    
+    .sv-hero-stats {
+        justify-content: center;
+    }
+    
+    .sv-hero-image {
+        order: -1;
+    }
+}
+
+/* Dark Hero Variant */
+.sv-hero-dark {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+.sv-hero-dark .sv-hero-title {
+    color: white;
+}
+
+.sv-hero-dark .sv-hero-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sv-hero-dark .sv-hero-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+</style>
+
+<!-- Hero Section Example -->
+<section class="sv-hero">
+    <div class="sv-hero-content">
+        <div class="sv-hero-text">
+            <div class="sv-hero-badge">
+                <span>✨</span> Trusted by 10,000+ Families
+            </div>
+            <h1 class="sv-hero-title">
+                Create Magical Stories Where <span>Your Child Is The Hero</span>
+            </h1>
+            <p class="sv-hero-description">
+                Personalize enchanting books that spark imagination and create lasting memories. 
+                Each story is uniquely crafted with your child's name, appearance, and interests.
+            </p>
+            <div class="sv-hero-buttons">
+                <button class="sv-btn sv-btn-primary sv-btn-large sv-btn-shine">
+                    Start Creating
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 0.5rem;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </button>
+                <button class="sv-btn sv-btn-secondary sv-btn-large">See Examples</button>
+            </div>
+            <div class="sv-hero-stats">
+                <div class="sv-hero-stat">
+                    <div class="sv-hero-stat-number">50k+</div>
+                    <div class="sv-hero-stat-label">Stories Created</div>
+                </div>
+                <div class="sv-hero-stat">
+                    <div class="sv-hero-stat-number">4.9</div>
+                    <div class="sv-hero-stat-label">★★★★★ Rating</div>
+                </div>
+                <div class="sv-hero-stat">
+                    <div class="sv-hero-stat-number">2min</div>
+                    <div class="sv-hero-stat-label">To Create</div>
+                </div>
+            </div>
+        </div>
+        <div class="sv-hero-image">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=600" alt="Child reading personalized book">
+        </div>
+    </div>
+</section>
